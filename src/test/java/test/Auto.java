@@ -3,7 +3,7 @@ package test;
 public class Auto {
 	String modelo;
 	int precio;
-	Asiento[] asientos;
+	Asiento [] asientos;
 	String marca;
 	Motor motor;
 	int registro;
@@ -18,10 +18,12 @@ public class Auto {
 		if (this.registro == this.motor.registro) {
 			original = true;
 			int c = this.asientos.length;
-			for (int i = 0; i < c; i++) {
+			int i = 0;
+			while (i < c) {
 				if (this.asientos[i].registro != this.registro) {
 					original = false;
 				}
+				i++;
 			}
 		}
 		if (original == true)

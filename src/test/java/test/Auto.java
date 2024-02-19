@@ -3,7 +3,7 @@ package test;
 public class Auto {
 	String modelo;
 	int precio;
-	Asiento [] asientos = new Asiento[10];
+	Asiento [] asientos;
 	String marca;
 	Motor motor;
 	int registro;
@@ -26,7 +26,7 @@ public class Auto {
 			original = true;
 			int i = 0;
 			while (i < this.asientos.length) {
-				if (this.asientos[i].registro != this.registro) {
+				if (this.asientos[i] != null && this.asientos[i].registro != this.registro) {
 					original = false;
 				}
 				i++;

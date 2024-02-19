@@ -3,23 +3,29 @@ package test;
 public class Auto {
 	String modelo;
 	int precio;
-	Asiento [] asientos;
+	Asiento [] asientos = new Asiento[10];
 	String marca;
 	Motor motor;
 	int registro;
 	static int cantidadCreados;
 	
 	int cantidadAsientos () {
-		return asientos.length;
+		int cantidad = 0;
+		int i = 0;
+		while (i < this.asientos.length) {
+			if (this.asientos[i] != null)
+				cantidad++;
+			i++;
+		}
+		return cantidad;
 	}
 	
 	String verificarIntegridad () {
 		boolean original = false;
 		if (this.registro == this.motor.registro) {
 			original = true;
-			int c = this.asientos.length;
 			int i = 0;
-			while (i < c) {
+			while (i < this.asientos.length) {
 				if (this.asientos[i].registro != this.registro) {
 					original = false;
 				}
